@@ -1,0 +1,129 @@
+.carousel .carousel-item {
+  min-height: 100vh;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+  padding: 0 10%;
+}
+.carousel .carousel-item:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+.carousel .carousel-item .container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.carousel .carousel-item h2 {
+  font-size: 32px;
+  color: #ffffff;
+  text-align: center;
+}
+.carousel .carousel-item p {
+  font-size: 20px;
+  color: #ffffff;
+  margin: 40px 0 0 0;
+  text-align: center;
+}
+.carousel .carousel-item.active h2 {
+  animation: fadeInLeft 0.5s ease forwards;
+}
+.carousel .carousel-item.active p {
+  animation: fadeInRight 0.5s ease forwards;
+}
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+.carousel .carousel-controls {
+  position: absolute;
+  left: 50%;
+  bottom: 40px;
+  z-index: 10;
+  transform: translateX(-50%);
+}
+.carousel .carousel-indicators {
+  position: relative;
+  margin: 0;
+}
+.carousel .carousel-indicators li {
+  height: 32px;
+  width: 32px;
+  margin: 0 5px;
+  border-radius: 50%;
+  background-position: center;
+  background-size: cover;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+.carousel .carousel-indicators li.active {
+  border-color: #ffffff;
+  transform: scale(1.2);
+}
+.carousel .carousel-control-next,
+.carousel .carousel-control-prev {
+  height: 20px;
+  width: 20px;
+  opacity: 1;
+  z-index: 3;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+.carousel .carousel-control-next {
+  right: -50px;
+}
+.carousel .carousel-control-prev {
+  left: -50px;
+}
+@media screen and (min-width: 768px) {
+  .carousel .carousel-item h2 {
+    font-size: 44px;
+  }
+  .carousel .carousel-item p {
+    font-size: 22px;
+    margin: 50px 0 0 0;
+  }
+  .carousel .carousel-indicators li {
+    height: 44px;
+    width: 44px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .carousel .carousel-item h2 {
+    font-size: 72px;
+  }
+  .carousel .carousel-item p {
+    font-size: 24px;
+    margin: 60px 0 0 0;
+  }
+  .carousel .carousel-indicators li {
+    height: 56px;
+    width: 56px;
+  }
+}
